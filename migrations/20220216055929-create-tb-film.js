@@ -25,12 +25,6 @@ module.exports = {
       },
       idCategory: {
         type: Sequelize.INTEGER,
-        references: {
-          model: "tbCategories",
-          key: "id",
-        },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       createdAt: {
         allowNull: false,
