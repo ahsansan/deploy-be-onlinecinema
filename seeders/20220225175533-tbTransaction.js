@@ -13,18 +13,16 @@ module.exports = {
      */
 
     await queryInterface.bulkInsert(
-      "tbUsers",
+      "tbTransactions",
       [
         {
-          email: "admin@gmail.com",
-          password:
-            "$2b$10$7ovHDrtaMe.FmutXxEhnWOo7rDOdTloUMgqms5RXYmL5/4dfM.OTm", //123456
-          fullName: "admin",
-          phone: "082226005644",
-          role: "admin",
-          image: "1645809652164-YinYang.png",
-          createdAt: "2022-02-16 07:17:46",
-          updatedAt: "2022-02-19 20:46:34",
+          idUser: 2,
+          idFilm: 1,
+          status: "pending",
+          accountNumber: "198313819",
+          transferProof: "bca.jpeg",
+          createdAt: "2022-02-16 12:33:44",
+          updatedAt: "2022-02-16 12:33:44",
         },
       ],
       {}
