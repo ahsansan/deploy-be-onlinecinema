@@ -22,6 +22,7 @@ module.exports = {
           fullName: "admin",
           phone: "082226005644",
           role: "admin",
+          createdAt: "2022-02-16 07:17:46",
         },
       ],
       {}
