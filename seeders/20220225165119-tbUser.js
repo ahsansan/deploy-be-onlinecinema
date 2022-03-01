@@ -23,7 +23,7 @@ module.exports = {
           phone: "082226005644",
           role: "admin",
           image:
-            "v1646118000/OnlineCinemaAhsan/1645809652164-YinYang_as8jgv.jpg",
+            "https://res.cloudinary.com/kejepangan/image/upload/v1646118000/OnlineCinemaAhsan/1645809652164-YinYang_as8jgv.jpg",
           createdAt: "2022-02-16 07:17:46",
           updatedAt: "2022-02-19 20:46:34",
         },
