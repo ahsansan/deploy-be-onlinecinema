@@ -132,6 +132,7 @@ exports.addFilm = async (req, res) => {
 
 exports.updateFilm = async (req, res) => {
   try {
+    const path = process.env.UPLOAD_PATH;
     const id = req.params.id;
     const body = req.body;
 
@@ -150,7 +151,7 @@ exports.updateFilm = async (req, res) => {
 
     const dataFilm = {
       ...body,
-      tumbnail: req.file.filename,
+      tumbnail: path + result.public_id,
     };
 
     await tbFilm.update(dataFilm, {

@@ -7,11 +7,13 @@ exports.addTransaction = async (req, res) => {
     const idUser = req.user.id;
     const idFilm = req.params.id;
     const data = req.body;
+    const path = process.env.UPLOAD_PATH;
+
     await tbTransaction.create({
       ...data,
       idUser: idUser,
       idFilm: idFilm,
-      transferProof: req.file.filename,
+      transferProof: path + result.public_id,
     });
 
     res.status(200).send({
