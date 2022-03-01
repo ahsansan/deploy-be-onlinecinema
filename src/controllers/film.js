@@ -4,6 +4,8 @@ const cloudinary = require("../utils/cloudinary");
 
 exports.getFilms = async (req, res) => {
   try {
+    const path = process.env.UPLOAD_PATH;
+
     let dataFilms = await tbFilm.findAll({
       include: [
         {
@@ -30,7 +32,10 @@ exports.getFilms = async (req, res) => {
     res.status(200).send({
       status: "success",
       data: {
-        film: AllFilm,
+        film: {
+          ...AllFilm,
+          tumbnail: path + dataFilms.tumbnail,
+        },
       },
     });
   } catch (err) {
@@ -86,8 +91,6 @@ exports.getFilm = async (req, res) => {
 
 exports.addFilm = async (req, res) => {
   try {
-    const path = process.env.UPLOAD_PATH;
-
     const result = await cloudinary.uploader.upload(req.file.path, {
       folder: "OnlineCinemaAhsan",
       use_filename: true,
@@ -96,7 +99,7 @@ exports.addFilm = async (req, res) => {
 
     const dataFilm = await tbFilm.create({
       ...req.body,
-      tumbnail: path + result.public_id,
+      tumbnail: result.public_id,
     });
     const { id } = dataFilm;
 
