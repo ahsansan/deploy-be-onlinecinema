@@ -20,6 +20,11 @@ module.exports = {
           createdAt: "2022-02-16 12:33:44",
           updatedAt: "2022-02-16 12:33:44",
         },
+        {
+          name: "Comedy",
+          createdAt: "2022-02-16 12:33:44",
+          updatedAt: "2022-02-16 12:33:44",
+        },
       ],
       {}
     );
