@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 
 exports.register = async (req, res) => {
   try {
+    const path = process.env.UPLOAD_PATH;
     const data = req.body;
 
     const schema = joi.object({
@@ -50,7 +51,6 @@ exports.register = async (req, res) => {
       fullName: dataUser.fullName,
       email: dataUser.email,
       role: dataUser.role,
-      password: dataUser.password,
     };
     const secretKey = process.env.SECRET_KEY;
 
@@ -63,6 +63,7 @@ exports.register = async (req, res) => {
           fullName: dataUser.fullName,
           username: dataUser.username,
           email: dataUser.email,
+          image: path + dataUser.image,
           token,
         },
       },
@@ -134,7 +135,6 @@ exports.login = async (req, res) => {
       fullName: dataOnTable.fullName,
       email: dataOnTable.email,
       role: dataOnTable.role,
-      password: dataOnTable.password,
     };
 
     const secretKey = process.env.SECRET_KEY;

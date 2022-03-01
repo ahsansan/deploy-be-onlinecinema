@@ -18,7 +18,7 @@ module.exports = {
         {
           idUser: 2,
           idFilm: 1,
-          status: "pending",
+          status: "Pending",
           accountNumber: "198313819",
           transferProof: "bca.jpeg",
           createdAt: "2022-02-16 12:33:44",
