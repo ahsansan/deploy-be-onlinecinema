@@ -86,6 +86,8 @@ exports.getFilm = async (req, res) => {
 
 exports.addFilm = async (req, res) => {
   try {
+    const path = process.env.UPLOAD_PATH;
+
     const result = await cloudinary.uploader.upload(req.file.path, {
       folder: "OnlineCinemaAhsan",
       use_filename: true,
@@ -94,7 +96,7 @@ exports.addFilm = async (req, res) => {
 
     const dataFilm = await tbFilm.create({
       ...req.body,
-      tumbnail: result.public_id,
+      tumbnail: path + result.public_id,
     });
     const { id } = dataFilm;
 
