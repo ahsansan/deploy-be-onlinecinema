@@ -59,9 +59,14 @@ exports.getUser = async (req, res) => {
 exports.updateUser = async (req, res) => {
   try {
     const id = req.params.id;
-
-    // data body
     const data = req.body;
+    const path = process.env.UPLOAD_PATH;
+
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "OnlineCinemaAhsan",
+      use_filename: true,
+      unique_filename: false,
+    });
 
     // cek id
     const checkId = await tbUser.findOne({
@@ -80,7 +85,7 @@ exports.updateUser = async (req, res) => {
 
     const dataUpload = {
       ...data,
-      image: req.file.filename,
+      image: path + result.public_id,
     };
 
     // Proses update
