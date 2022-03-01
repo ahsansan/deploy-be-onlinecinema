@@ -20,7 +20,7 @@ module.exports = {
           idFilm: 1,
           status: "Pending",
           accountNumber: "198313819",
-          transferProof: "bca.jpeg",
+          transferProof: "v1646118000/OnlineCinemaAhsan/bca_soczmv.jpg",
           createdAt: "2022-02-16 12:33:44",
           updatedAt: "2022-02-16 12:33:44",
         },

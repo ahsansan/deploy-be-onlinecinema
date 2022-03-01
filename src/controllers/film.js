@@ -1,5 +1,6 @@
 const { tbFilm, tbCategory, tbUser, tbTransaction } = require("../../models");
 const fs = require("fs");
+const cloudinary = require("../utils/cloudinary");
 
 exports.getFilms = async (req, res) => {
   try {
@@ -85,9 +86,15 @@ exports.getFilm = async (req, res) => {
 
 exports.addFilm = async (req, res) => {
   try {
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "OnlineCinemaAhsan",
+      use_filename: true,
+      unique_filename: false,
+    });
+
     const dataFilm = await tbFilm.create({
       ...req.body,
-      tumbnail: req.file.filename,
+      tumbnail: result.public_id,
     });
     const { id } = dataFilm;
 
