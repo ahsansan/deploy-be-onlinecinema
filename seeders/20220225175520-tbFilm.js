@@ -19,7 +19,8 @@ module.exports = {
           title: "Tokyo Revengers",
           description:
             "Takemichi Hanagaki’s second year of middle school was the highest point in his life. He had respect, a gang of friends he could count on, and even a girlfriend. But that was twelve years ago. Today, he’s a nobody: a washed-up nonentity made fun of by children and always forced to apologize to his younger boss. A sudden news report on the Tokyo Manji Gang’s cruel murder of the only girlfriend he ever had alongside her brother only adds insult to injury. Half a second before a train ends his pitiful life for good, Takemichi flashes back to that same day twelve years ago, when he was still dating Hinata Tachibana.",
-          tumbnail: "v1646118001/OnlineCinemaAhsan/TokyoRevengers_ezo5nb.jpg",
+          tumbnail:
+            "https://res.cloudinary.com/kejepangan/image/upload/v1646118001/OnlineCinemaAhsan/TokyoRevengers_ezo5nb.jpg",
           filmUrl: "https://www.youtube.com/embed/ckbbqlBbG-8",
           price: 198000,
           idCategory: 1,
