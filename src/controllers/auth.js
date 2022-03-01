@@ -44,6 +44,7 @@ exports.register = async (req, res) => {
     const dataUser = await tbUser.create({
       ...data,
       password: hashhedPassword,
+      image: path + "/v1646118000/OnlineCinemaAhsan/noname_r41cke.png",
     });
 
     const tokenData = {
@@ -63,7 +64,7 @@ exports.register = async (req, res) => {
           fullName: dataUser.fullName,
           username: dataUser.username,
           email: dataUser.email,
-          image: path + dataUser.image,
+          image: dataUser.image,
           token,
         },
       },
@@ -81,7 +82,6 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     const data = req.body;
-    const path = process.env.UPLOAD_PATH;
 
     // Validasi input
     const schema = joi.object({
@@ -150,7 +150,7 @@ exports.login = async (req, res) => {
           fullName: dataOnTable.fullName,
           email: dataOnTable.email,
           phone: dataOnTable.phone,
-          image: path + dataOnTable.image,
+          image: dataOnTable.image,
           role: dataOnTable.role,
           token,
         },
