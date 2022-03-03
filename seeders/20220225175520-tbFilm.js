@@ -23,7 +23,7 @@ module.exports = {
             "https://res.cloudinary.com/kejepangan/image/upload/v1646118001/OnlineCinemaAhsan/TokyoRevengers_ezo5nb.jpg",
           filmUrl: "https://www.youtube.com/embed/ckbbqlBbG-8",
           price: 198000,
-          idCategory: 1,
+          idCategory: 2,
           createdAt: "2022-02-16 07:17:46",
           updatedAt: "2022-02-19 20:46:34",
         },
