@@ -13,7 +13,6 @@ exports.register = async (req, res) => {
       email: joi.string().email().required(),
       phone: joi.string().min(4).required(),
       password: joi.string().min(6).required(),
-      image: joi.string().min(3).required(),
     });
 
     const { error } = schema.validate(data);
@@ -44,7 +43,7 @@ exports.register = async (req, res) => {
     const dataUser = await tbUser.create({
       ...data,
       password: hashhedPassword,
-      image: path + data.image,
+      image: path + "/v1646118000/OnlineCinemaAhsan/noname_r41cke.png",
     });
 
     const tokenData = {
