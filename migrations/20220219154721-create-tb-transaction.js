@@ -10,9 +10,23 @@ module.exports = {
       },
       idUser: {
         type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "tbUsers",
+          key: "id",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       idFilm: {
         type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "tbFilms",
+          key: "id",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       status: {
         type: Sequelize.STRING,
