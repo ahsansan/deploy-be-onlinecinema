@@ -28,7 +28,7 @@ module.exports = {
         {
           idUser: 2,
           idFilm: 5,
-          status: "Approve",
+          status: "Approved",
           accountNumber: "198313819",
           transferProof:
             "https://res.cloudinary.com/kejepangan/image/upload/v1646118000/OnlineCinemaAhsan/bca_soczmv.jpg",
