@@ -95,7 +95,7 @@ exports.login = async (req, res) => {
     if (error) {
       return res.status(400).send({
         status: "validation failed",
-        error: error.details[0].message,
+        message: error.details[0].message,
       });
     }
 
@@ -110,7 +110,7 @@ exports.login = async (req, res) => {
     if (!dataOnTable) {
       return res.status(400).send({
         status: "failed",
-        message: "email and Password don't match",
+        message: "email and password don't match",
       });
     }
 
@@ -124,7 +124,7 @@ exports.login = async (req, res) => {
     if (!validatePassword) {
       return res.status(400).send({
         status: "failed",
-        message: "email and Password don't match",
+        message: "email and password don't match",
       });
     }
 
