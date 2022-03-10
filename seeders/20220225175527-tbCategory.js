@@ -16,11 +16,6 @@ module.exports = {
       "tbCategories",
       [
         {
-          name: "* Select Category",
-          createdAt: "2022-02-16 12:33:44",
-          updatedAt: "2022-02-16 12:33:44",
-        },
-        {
           name: "Action",
           createdAt: "2022-02-16 12:33:44",
           updatedAt: "2022-02-16 12:33:44",
