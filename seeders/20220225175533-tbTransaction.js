@@ -25,6 +25,26 @@ module.exports = {
           createdAt: "2022-02-16 12:33:44",
           updatedAt: "2022-02-16 12:33:44",
         },
+        {
+          idUser: 2,
+          idFilm: 5,
+          status: "Approve",
+          accountNumber: "198313819",
+          transferProof:
+            "https://res.cloudinary.com/kejepangan/image/upload/v1646118000/OnlineCinemaAhsan/bca_soczmv.jpg",
+          createdAt: "2022-02-16 12:33:44",
+          updatedAt: "2022-02-16 12:33:44",
+        },
+        {
+          idUser: 2,
+          idFilm: 5,
+          status: "Canceled",
+          accountNumber: "198313819",
+          transferProof:
+            "https://res.cloudinary.com/kejepangan/image/upload/v1646118000/OnlineCinemaAhsan/bca_soczmv.jpg",
+          createdAt: "2022-02-16 12:33:44",
+          updatedAt: "2022-02-16 12:33:44",
+        },
       ],
       {}
     );

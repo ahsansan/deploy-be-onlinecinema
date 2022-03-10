@@ -25,6 +25,16 @@ module.exports = {
           createdAt: "2022-02-16 12:33:44",
           updatedAt: "2022-02-16 12:33:44",
         },
+        {
+          name: "Rommance",
+          createdAt: "2022-02-16 12:33:44",
+          updatedAt: "2022-02-16 12:33:44",
+        },
+        {
+          name: "Isekai",
+          createdAt: "2022-02-16 12:33:44",
+          updatedAt: "2022-02-16 12:33:44",
+        },
       ],
       {}
     );
