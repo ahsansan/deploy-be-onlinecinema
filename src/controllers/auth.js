@@ -1,12 +1,12 @@
-const { tbUser, tbTransaction } = require("../../models");
+const { tbUser } = require("../../models");
 const joi = require("joi");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 exports.register = async (req, res) => {
   try {
-    const path = process.env.UPLOAD_PATH;
     const data = req.body;
+    const path = process.env.UPLOAD_PATH;
 
     const schema = joi.object({
       fullName: joi.string().min(4).required(),
@@ -43,7 +43,7 @@ exports.register = async (req, res) => {
     const dataUser = await tbUser.create({
       ...data,
       password: hashhedPassword,
-      image: path + "/v1646118000/OnlineCinemaAhsan/noname_r41cke.png",
+      image: path + "noname.png",
     });
 
     const tokenData = {
@@ -60,10 +60,12 @@ exports.register = async (req, res) => {
       status: "success",
       data: {
         user: {
+          id: dataUser.id,
           fullName: dataUser.fullName,
-          username: dataUser.username,
+          phone: dataUser.phone,
           email: dataUser.email,
           image: dataUser.image,
+          role: dataUser.role,
           token,
         },
       },
@@ -167,7 +169,6 @@ exports.login = async (req, res) => {
 
 exports.authUser = async (req, res) => {
   try {
-    const path = process.env.UPLOAD_PATH;
     const id = req.user.id;
     const dataUser = await tbUser.findOne({
       where: {
@@ -192,7 +193,7 @@ exports.authUser = async (req, res) => {
           id: dataUser.id,
           name: dataUser.fullName,
           email: dataUser.email,
-          image: path + dataUser.image,
+          image: dataUser.image,
           phone: dataUser.phone,
           role: dataUser.role,
         },
