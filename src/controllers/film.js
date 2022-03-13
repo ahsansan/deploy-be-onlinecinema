@@ -87,7 +87,6 @@ exports.getFilm = async (req, res) => {
 exports.addFilm = async (req, res) => {
   try {
     const path = process.env.UPLOAD_PATH;
-
     const result = await cloudinary.uploader.upload(req.file.path, {
       folder: "OnlineCinemaAhsan",
       use_filename: true,
@@ -135,6 +134,11 @@ exports.updateFilm = async (req, res) => {
     const path = process.env.UPLOAD_PATH;
     const id = req.params.id;
     const body = req.body;
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "OnlineCinemaAhsan",
+      use_filename: true,
+      unique_filename: false,
+    });
 
     const findFilm = await tbFilm.findOne({
       where: {

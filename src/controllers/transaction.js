@@ -1,6 +1,7 @@
 const { tbUser, tbTransaction, tbFilm, tbCategory } = require("../../models");
 const { Op } = require("sequelize");
 const fs = require("fs");
+const cloudinary = require("../utils/cloudinary");
 
 exports.addTransaction = async (req, res) => {
   try {
@@ -8,6 +9,11 @@ exports.addTransaction = async (req, res) => {
     const idFilm = req.params.id;
     const data = req.body;
     const path = process.env.UPLOAD_PATH;
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "OnlineCinemaAhsan",
+      use_filename: true,
+      unique_filename: false,
+    });
 
     await tbTransaction.create({
       ...data,

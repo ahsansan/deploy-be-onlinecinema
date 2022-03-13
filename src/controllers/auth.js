@@ -43,7 +43,7 @@ exports.register = async (req, res) => {
     const dataUser = await tbUser.create({
       ...data,
       password: hashhedPassword,
-      image: path + "noname.png",
+      image: path + "v1646118000/OnlineCinemaAhsan/noname_r41cke.png",
     });
 
     const tokenData = {
