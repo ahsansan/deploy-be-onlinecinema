@@ -108,12 +108,6 @@ exports.updateUser = async (req, res) => {
 
     dataUpdate = JSON.parse(JSON.stringify(dataUpdate));
 
-    // Mengedit image link
-    dataUpdate = {
-      ...dataUpdate,
-      image: process.env.UPLOAD_PATH + dataUpdate.image,
-    };
-
     // Berhasil update
     res.status(200).send({
       status: "success",
