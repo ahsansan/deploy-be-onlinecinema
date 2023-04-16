@@ -9,6 +9,7 @@ const {
   getUser,
   updateUser,
   deleteUser,
+  updateProfilePicture,
 } = require("../controllers/user");
 const {
   getFilms,
@@ -45,7 +46,8 @@ router.post("/login", login);
 router.get("/check-auth", auth, authUser);
 // User
 router.get("/user/:id", auth, getUser);
-router.patch("/user/:id", auth, uploadFile("image"), updateUser);
+router.patch("/user/:id", auth, updateUser);
+router.patch("/profile-picture/:id", auth, uploadFile("image"), updateProfilePicture);
 // Film
 router.get("/films", getFilms);
 router.get("/film/:id", getFilm);

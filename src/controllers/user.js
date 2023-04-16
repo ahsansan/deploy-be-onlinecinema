@@ -57,7 +57,7 @@ exports.getUser = async (req, res) => {
   }
 };
 
-exports.updateUser = async (req, res) => {
+exports.updateProfilePicture = async (req, res) => {
   try {
     const id = req.params.id;
     const data = req.body;
@@ -91,6 +91,63 @@ exports.updateUser = async (req, res) => {
 
     // Proses update
     await tbUser.update(dataUpload, {
+      where: {
+        id: id,
+      },
+    });
+
+    // Data setelah di update
+    let dataUpdate = await tbUser.findOne({
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "password"],
+      },
+      where: {
+        id: id,
+      },
+    });
+
+    dataUpdate = JSON.parse(JSON.stringify(dataUpdate));
+
+    // Berhasil update
+    res.status(200).send({
+      status: "success",
+      data: {
+        user: dataUpdate,
+      },
+    });
+
+    // error server
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
+
+exports.updateUser = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const data = req.body;
+
+    // cek id
+    const checkId = await tbUser.findOne({
+      where: {
+        id: id,
+      },
+    });
+
+    // Jika id tidak ada
+    if (!checkId) {
+      return res.status(400).send({
+        status: "failed",
+        message: `Id: ${id} not found`,
+      });
+    }
+
+    // Proses update
+    await tbUser.update(data, {
       where: {
         id: id,
       },
