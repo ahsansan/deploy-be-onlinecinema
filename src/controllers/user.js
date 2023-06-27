@@ -60,7 +60,6 @@ exports.getUser = async (req, res) => {
 exports.updateProfilePicture = async (req, res) => {
   try {
     const id = req.params.id;
-    const data = req.body;
     const path = process.env.UPLOAD_PATH;
 
     const result = await cloudinary.uploader.upload(req.file.path, {
@@ -85,7 +84,6 @@ exports.updateProfilePicture = async (req, res) => {
     }
 
     const dataUpload = {
-      ...data,
       image: path + result.public_id,
     };
 
