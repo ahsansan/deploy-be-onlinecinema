@@ -5,7 +5,8 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const config = require(__dirname + '/../config/config.js')[env];
+const mysql2 = require('mysql2');
 const db = {};
 
 let sequelize;
@@ -14,6 +15,11 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+
+if (config.dialect === 'mysql') {
+  config.dialectModule = mysql2;
+}
+new Sequelize(config);
 
 fs
   .readdirSync(__dirname)

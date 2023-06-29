@@ -2,7 +2,7 @@
   "development": {
     "username": "ahsan",
     "password": "hhillr1234",
-    "database": "online-cinema-new",
+    "database": "online-cinema-vercel",
     "host": "localhost",
     "port": 8889,
     "dialect": "mysql"
