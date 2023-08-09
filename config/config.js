@@ -30,10 +30,10 @@ production: {
     dialect: 'mysql',
     dialectOptions: {
         bigNumberStrings: true,
-        ssl: {
-            require: true,
-            rejectUnauthorized: false
-        }
+        // ssl: {
+        //     require: true,
+        //     rejectUnauthorized: false
+        // }
     }
 }
 };
